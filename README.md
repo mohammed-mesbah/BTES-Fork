@@ -95,7 +95,3 @@ Contributions are welcome! If you'd like to contribute, please follow these step
 ## Acknowledgments
 
 Special thanks to Dr. Ali Abu Ras for his guidance and support in CS315.
-
----
-
-Replace "your-username" and "your-repository" with the actual names when you set up the repository. This README gives users and collaborators a clear understanding of the project and how to get started.
