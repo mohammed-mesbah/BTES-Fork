@@ -27,7 +27,7 @@ Before you begin, make sure you have the following software installed:
    ```
 4. **Activate the virtual environment**:
 
-   - **On Windows**:
+   - **On Windows powershell**:
      ```bash
      .venv\Scripts\activate
      ```
@@ -38,6 +38,8 @@ Before you begin, make sure you have the following software installed:
 
 5. **Install the required Python packages**:
    ```bash
+   pip install django
+   or
    pip install -r requirements.txt
    ```
 
