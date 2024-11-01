@@ -3,7 +3,8 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path("", views.index, name="index"),
+    path("index/", views.index, name="index"),
+    path("", views.link_list, name="link_list"),  # رابط جديد لعرض الروابط
     path("create_event/", views.create_event, name="create_event"),
     path("create_ticket/", views.create_ticket, name="create_ticket"),
     path(

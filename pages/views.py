@@ -1,7 +1,8 @@
 from django.shortcuts import HttpResponse, redirect, render
+from django.urls import reverse
 
-from .forms import (EventForm,  # استورد النموذج الذي تريد استخدامه
-                    PaymentForm, RefundRequestForm, TicketForm, UserForm)
+from .forms import EventForm  # استورد النموذج الذي تريد استخدامه
+from .forms import PaymentForm, RefundRequestForm, TicketForm, UserForm
 
 
 # Create your views here.
@@ -69,3 +70,16 @@ def create_payment(request):
     else:
         form = PaymentForm()
     return render(request, 'pages/create_payment.html', {'form': form})
+
+
+def link_list(request):
+    # جمع الروابط المتاحة
+    links = [
+        {"name": "Home", "url": reverse("index")},
+        {"name": "Create Event", "url": reverse("create_event")},
+        {"name": "Create Ticket", "url": reverse("create_ticket")},
+        {"name": "Create Refund Request", "url": reverse("create_refund_request")},
+        {"name": "Create User", "url": reverse("create_user")},
+        {"name": "Create Payment", "url": reverse("create_payment")},
+    ]
+    return render(request, "pages/link_list.html", {"links": links})
