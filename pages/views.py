@@ -1,6 +1,71 @@
-from django.shortcuts import HttpResponse, render
+from django.shortcuts import HttpResponse, redirect, render
+
+from .forms import (EventForm,  # استورد النموذج الذي تريد استخدامه
+                    PaymentForm, RefundRequestForm, TicketForm, UserForm)
 
 
 # Create your views here.
 def index(request):
-    return HttpResponse("Index page")
+    return HttpResponse("HttpResponse empty page")
+
+
+
+
+def create_event(request):
+    if request.method == 'POST':
+        form = EventForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('pages/create_event/')  # استبدل 'success' بالاسم الحقيقي لوجهتك
+        else:
+            print(form.errors)  # طباعة الأخطاء في النموذج
+    else:
+        form = EventForm()
+    return render(request, 'pages/create_event.html', {'form': form})
+
+
+
+
+def create_ticket(request):
+    if request.method == 'POST':
+        form = TicketForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('success')  # استبدل 'success' بالاسم الحقيقي لوجهتك
+    else:
+        form = TicketForm()
+    return render(request, 'pages/create_ticket.html', {'form': form})
+
+def create_refund_request(request):
+    if request.method == 'POST':
+        form = RefundRequestForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('success')  # استبدل 'success' بالاسم الحقيقي لوجهتك
+    else:
+        form = RefundRequestForm()
+    return render(request, 'pages/create_refund_request.html', {'form': form})
+
+
+
+# دالة لإنشاء مستخدم جديد
+def create_user(request):
+    if request.method == 'POST':
+        form = UserForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('success')  # استبدل 'success' بالاسم الحقيقي لوجهتك
+    else:
+        form = UserForm()
+    return render(request, 'pages/create_user.html', {'form': form})
+
+# دالة لإنشاء دفع جديد
+def create_payment(request):
+    if request.method == 'POST':
+        form = PaymentForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('success')  # استبدل 'success' بالاسم الحقيقي لوجهتك
+    else:
+        form = PaymentForm()
+    return render(request, 'pages/create_payment.html', {'form': form})

@@ -1,0 +1,19 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>إنشاء حدث</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">  <!-- استيراد ملف CSS -->
+</head>
+<body>
+    <div class="container">  <!-- إضافة div لتوسيع العناصر -->
+        <h1>إنشاء حدث جديد</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}  <!-- عرض النموذج كفقاعات -->
+            <button type="submit">إنشاء حدث</button>
+        </form>
+    </div>
+</body>
+</html>
