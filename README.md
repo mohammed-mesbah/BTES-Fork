@@ -33,13 +33,7 @@ Before you begin, make sure you have the following software installed:
      ```bash
      source venv/bin/activate
      ```
-4. **Install the required Python packages**:
 
-   ```bash
-   pip install django
-   or
-   pip install -r requirements.txt
-   ```
 
 ## Usage & run in browser
 
