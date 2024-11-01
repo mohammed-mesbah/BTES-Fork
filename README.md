@@ -23,17 +23,17 @@ Before you begin, make sure you have the following software installed:
    ```
 3. **Create a virtual environment** (recommended):
    ```bash
-   python -m venv .venv
+   python -m venv venv
    ```
 4. **Activate the virtual environment**:
 
    - **On Windows powershell**:
      ```bash
-     .venv\Scripts\activate
+     venv\Scripts\activate
      ```
    - **On macOS and Linux**:
      ```bash
-     source .venv/bin/activate
+     source venv/bin/activate
      ```
 
 5. **Install the required Python packages**:
@@ -46,17 +46,14 @@ Before you begin, make sure you have the following software installed:
 ## Usage & run in browser
 
 1. **Run the Django development server**:
-  ```bash
-   cd project
-   ```
+   from btes directory
    ```bash
    python manage.py runserver
    ```
-2. Open a web browser and go to:
+3. Open a web browser and go to:
    ```
    http://127.0.0.1:8000
    ```
-
    This will open the application on your local web server.
 
 ## Features
