@@ -1,4 +1,4 @@
-# BTES - Booking Tickets Events System2
+# BTES - Booking Tickets Events System4
 
 BTES (Booking Tickets Events System) is a web-based application designed to allow users to easily view, search, and book tickets for various events. It provides a user-friendly interface for managing event bookings and includes features like refunds, payment processing, and admin event management.
 
@@ -62,7 +62,8 @@ Before you begin, make sure you have the following software installed:
    
    databases:
    ```py manage.py createsuperuser```
-   ```root123-db:127.0.0.1:8000/admin/```
+   
+   ```http://127.0.0.1:8000/admin/```
 
    This will open the application on your local web server.
 
