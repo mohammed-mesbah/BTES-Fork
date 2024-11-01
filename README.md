@@ -17,13 +17,14 @@ Before you begin, make sure you have the following software installed:
 
    ```bash
    git branch -m main
-   cd path_where_you_want_Installation
+   cd path!!_where_you_want_Installation
    git clone https://github.com/mmsbah191/BTES.git
    ```
 2. **Navigate to the project directory**:
 
    ```bash
-   cd BTES
+   cd path!!/BTES
+   code .
    ```
 3. **Activate the virtual environment**:
 
