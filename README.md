@@ -21,11 +21,7 @@ Before you begin, make sure you have the following software installed:
    ```bash
    cd BTES
    ```
-3. **Create a virtual environment** (recommended):
-   ```bash
-   python -m venv venv
-   ```
-4. **Activate the virtual environment**:
+3. **Activate the virtual environment**:
 
    - **On Windows powershell**:
      ```bash
@@ -45,7 +41,12 @@ Before you begin, make sure you have the following software installed:
 
 ## Usage & run in browser
 
-1. **Run the Django development server**:
+1. **Navigate to the project directory**:
+   ```bash
+   cd BTES
+   ```
+
+2. **Run the Django development server**:
    from btes directory
    ```bash
    python manage.py runserver
