@@ -52,13 +52,17 @@ Before you begin, make sure you have the following software installed:
    from btes directory
 
    ```bash
-   python manage.py runserver
+   py manage.py runserver
    ```
 3. Open a web browser and go to:
 
-   ```
-   http://127.0.0.1:8000
-   ```
+   
+   pages:
+   ```http://127.0.0.1:8000```
+   
+   databases:
+   ```py manage.py createsuperuser```
+   ```root123-db:127.0.0.1:8000/admin/```
 
    This will open the application on your local web server.
 
