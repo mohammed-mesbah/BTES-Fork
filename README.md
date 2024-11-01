@@ -16,6 +16,8 @@ Before you begin, make sure you have the following software installed:
 1. **Clone the repository**:
 
    ```bash
+   git branch -m main
+   cd path_where_you_want_Installation
    git clone https://github.com/mmsbah191/BTES.git
    ```
 2. **Navigate to the project directory**:
