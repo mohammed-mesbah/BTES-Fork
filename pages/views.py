@@ -81,5 +81,5 @@ def link_list(request):
         {"name": "Create Refund Request", "url": reverse("create_refund_request")},
         {"name": "Create User", "url": reverse("create_user")},
         {"name": "Create Payment", "url": reverse("create_payment")},
-    ]
+    ] 
     return render(request, "pages/link_list.html", {"links": links})
