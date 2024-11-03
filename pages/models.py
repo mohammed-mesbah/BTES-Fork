@@ -2,11 +2,10 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 
 
-# نموذج المستخدم
 class User(AbstractUser):
     is_admin = models.BooleanField(default=False)
 
-# نموذج الحدث
+
 class Event(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
@@ -20,7 +19,7 @@ class Event(models.Model):
     def __str__(self):
         return self.title
 
-# نموذج التذكرة
+
 class Ticket(models.Model):
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -30,9 +29,8 @@ class Ticket(models.Model):
     
     
     def purchase_ticket(self):
-        # التحقق من توفر العدد المطلوب من التذاكر في الحدث
         if self.event.available_tickets >= self.quantity:
-            self.event.available_tickets -= self.quantity  # تقليل السعة المتاحة في الحدث
+            self.event.available_tickets -= self.quantity 
             self.is_refunded = False
             self.save()
             self.event.save()
@@ -40,13 +38,11 @@ class Ticket(models.Model):
             raise ValueError("Not enough tickets available for this event.")
     
     def print_ticket(self):
-        # طباعة تفاصيل التذكرة
         return f"Ticket for {self.event.title} - Quantity: {self.quantity} - Purchased by {self.user.username} on {self.purchase_date}"
 
     def __str__(self):
         return f"Ticket for {self.event.title} - Quantity: {self.quantity} - Purchased by {self.user.username} on {self.purchase_date}"
 
-# نموذج طلب الاسترداد
 class RefundRequest(models.Model):
     ticket = models.ForeignKey(Ticket, on_delete=models.CASCADE)
     request_date = models.DateTimeField(auto_now_add=True)
@@ -54,7 +50,6 @@ class RefundRequest(models.Model):
     credit_amount = models.DecimalField(max_digits=10, decimal_places=2)
     
     # def cancel_ticket(self):
-    #     # إلغاء التذكرة وزيادة السعة المتاحة في الحدث
     #     if self.status == 'active':
     #         self.status = 'cancelled'
     #         self.event.capacity += self.quantity  # استعادة السعة المتاحة
@@ -69,7 +64,6 @@ class RefundRequest(models.Model):
     def __str__(self):
         return f'Refund request for {self.ticket}'
 
-# نموذج الدفع
 class Payment(models.Model):
     ticket = models.ForeignKey(Ticket, on_delete=models.CASCADE)
     payment_date = models.DateTimeField(auto_now_add=True)
