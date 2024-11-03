@@ -17,7 +17,7 @@ def create_event(request):
         form = EventForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('pages/create_event/')  # استبدل 'success' بالاسم الحقيقي لوجهتك
+            return redirect('create_event')  # استبدل 'success' بالاسم الحقيقي لوجهتك
         else:
             print(form.errors)  # طباعة الأخطاء في النموذج
     else:
@@ -32,7 +32,7 @@ def create_ticket(request):
         form = TicketForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('success')  # استبدل 'success' بالاسم الحقيقي لوجهتك
+            return redirect('create_ticket')  # استبدل 'success' بالاسم الحقيقي لوجهتك
     else:
         form = TicketForm()
     return render(request, 'pages/create_ticket.html', {'form': form})
@@ -42,7 +42,7 @@ def create_refund_request(request):
         form = RefundRequestForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('success')  # استبدل 'success' بالاسم الحقيقي لوجهتك
+            return redirect('create_refund_request')  # استبدل 'success' بالاسم الحقيقي لوجهتك
     else:
         form = RefundRequestForm()
     return render(request, 'pages/create_refund_request.html', {'form': form})
@@ -55,7 +55,7 @@ def create_user(request):
         form = UserForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('success')  # استبدل 'success' بالاسم الحقيقي لوجهتك
+            return redirect('create_user')  # استبدل 'success' بالاسم الحقيقي لوجهتك
     else:
         form = UserForm()
     return render(request, 'pages/create_user.html', {'form': form})
@@ -66,7 +66,7 @@ def create_payment(request):
         form = PaymentForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('success')  # استبدل 'success' بالاسم الحقيقي لوجهتك
+            return redirect('create_payment')  # استبدل 'success' بالاسم الحقيقي لوجهتك
     else:
         form = PaymentForm()
     return render(request, 'pages/create_payment.html', {'form': form})
