@@ -7,15 +7,15 @@ BTES (Booking Tickets Events System) is a web-based application designed to allo
 Before you begin, make sure you have the following software installed:
 
 - **Python 3.12.0**: get last version by `python.exe -m pip install --upgrade pip`
-- **Django**: `pip install django`, for easy to link with js-html-css
-- **JavaScript**:already exists in browsers, for some dynamic in page
-- **HTML and CSS**:already supported in browsers, for graphic user interface
+- **Browser**:run the project on your local web server.
+- **Git**:(optional)vcs to sync and pull & push updates if you want.
+
 
 ## Installation
 
 1. **where you want Installation Btes project**:
-   open git bash command or ps
-   write yourpath  Let's say at desktop
+
+   open git bash command or ps write yourpath  Let's say at desktop
   ```bash
 cd C:/Users/%USERPROFILE%/Desktop
    ```
@@ -41,7 +41,7 @@ by terminal or powershell(ps) or git, change %USERPROFILE% with your username li
    ```
 2. **Open your editor or Ide from current path**
    if VsCode `code .` or click riht in files then alot option then open BTES with vscode
-   then by your editor go to built in terminal with `ctrl+`` or `ctrl+ذ` or click terminal button in navbar option
+   then by your editor go to built in terminal with `ctrl+` ` or `ctrl+ذ` or click terminal button in navbar option
 
 3. **Activate the virtual environment**
 (optinal try discard it) sometimes your terminal editor Activate automatic
@@ -53,6 +53,7 @@ by terminal or powershell(ps) or git, change %USERPROFILE% with your username li
      ```bash
      source venv/bin/activate
      ```
+     
 4. **Run the Django development server**:
    from btes directory
    ```bash
@@ -60,15 +61,15 @@ by terminal or powershell(ps) or git, change %USERPROFILE% with your username li
    ```
 3. **Open a web browser and go to**:
    This will open the application on your local web server.
-   pages links:
-   ```http://127.0.0.1:8000```
+   
+   pages links:```http://127.0.0.1:8000```
 
-   databases link:
-   ```http://127.0.0.1:8000/admin/```
+   databases link/admin panel link:```http://127.0.0.1:8000/admin/```
 
 **notes**
-   for login in database create username if you don't have one  by terminal write.
-   ```py manage.py createsuperuser```
+   for login in database create username if you don't have one get one by terminal write.
+   
+   ```bash py manage.py createsuperuser```
 
 ## Features
 
