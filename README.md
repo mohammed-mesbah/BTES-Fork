@@ -1,4 +1,4 @@
-# BTES - Booking Tickets Events System4
+# BTES - Booking Tickets Events System5
 
 BTES (Booking Tickets Events System) is a web-based application designed to allow users to easily view, search, and book tickets for various events. It provides a user-friendly interface for managing event bookings and includes features like refunds, payment processing, and admin event management.
 
@@ -7,27 +7,44 @@ BTES (Booking Tickets Events System) is a web-based application designed to allo
 Before you begin, make sure you have the following software installed:
 
 - **Python 3.12.0**: get last version by `python.exe -m pip install --upgrade pip`
-- **Django**: `pip install django`, for easy to link with js-html-css
-- **JavaScript**:already exists in browsers, for some dynamic in page
-- **HTML and CSS**:already supported in browsers, for graphic user interface
+- **Browser**:run the project on your local web server.
+- **Git**:(optional)vcs to sync and pull & push updates if you want.
+
 
 ## Installation
 
-1. **Clone the repository**:
+1. **where you want Installation Btes project**:
 
-   ```bash
-   git branch -m main
-   cd path!!_where_you_want_Installation
+   open git bash command or ps write yourpath  Let's say at desktop
+  ```bash
+cd C:/Users/%USERPROFILE%/Desktop
+   ```
+2. **Clone the repository**:
+  ```bash 
    git clone https://github.com/mmsbah191/BTES.git
    ```
-2. **Navigate to the project directory**:
 
-   ```bash
-   cd path!!/BTES
-   code .
+3.**Opthinal**
+  ```bash 
+   cd BTES
    ```
-3. **Activate the virtual environment**:
+   ```bash 
+   git branch -m main
+   ```
 
+## Usage & run in browser
+by terminal or powershell(ps) or git, change %USERPROFILE% with your username like
+
+1. **go to the project directory**:
+   ```bash
+   cd C:/Users/%USERPROFILE%/Desktop/BTES
+   ```
+2. **Open your editor or Ide from current path**
+   if VsCode `code .` or click riht in files then alot option then open BTES with vscode
+   then by your editor go to built in terminal with `ctrl+` ` or `ctrl+ذ` or click terminal button in navbar option
+
+3. **Activate the virtual environment**
+(optinal try discard it) sometimes your terminal editor Activate automatic
    - **On Windows powershell**:
      ```bash
      venv\Scripts\activate
@@ -36,33 +53,23 @@ Before you begin, make sure you have the following software installed:
      ```bash
      source venv/bin/activate
      ```
-
-
-## Usage & run in browser
-
-1. **Navigate to the project directory**:
-
-   ```bash
-   cd BTES
-   ```
-2. **Run the Django development server**:
+     
+4. **Run the Django development server**:
    from btes directory
-
    ```bash
    py manage.py runserver
    ```
-3. Open a web browser and go to:
-
-   
-   pages:
-   ```http://127.0.0.1:8000```
-   
-   databases:
-   ```py manage.py createsuperuser```
-   
-   ```http://127.0.0.1:8000/admin/```
-
+3. **Open a web browser and go to**:
    This will open the application on your local web server.
+   
+   pages links:```http://127.0.0.1:8000```
+
+   databases link/admin panel link:```http://127.0.0.1:8000/admin/```
+
+**notes**
+   for login in database create username if you don't have one get one by terminal write.
+   
+   ```bash py manage.py createsuperuser```
 
 ## Features
 
