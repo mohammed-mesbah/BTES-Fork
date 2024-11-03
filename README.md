@@ -1,4 +1,4 @@
-# BTES - Booking Tickets Events System5
+# BTES - Booking Tickets Events System6
 
 BTES (Booking Tickets Events System) is a web-based application designed to allow users to easily view, search, and book tickets for various events. It provides a user-friendly interface for managing event bookings and includes features like refunds, payment processing, and admin event management.
 
@@ -10,42 +10,47 @@ Before you begin, make sure you have the following software installed:
 - **Browser**:run the project on your local web server.
 - **Git**:(optional)vcs to sync and pull & push updates if you want.
 
-
 ## Installation
 
 1. **where you want Installation Btes project**:
 
    open git bash command or ps write yourpath  Let's say at desktop
-  ```bash
+
+```bash
 cd C:/Users/%USERPROFILE%/Desktop
-   ```
+```
+
 2. **Clone the repository**:
-  ```bash 
-   git clone https://github.com/mmsbah191/BTES.git
-   ```
+
+```bash
+ git clone https://github.com/mmsbah191/BTES.git
+```
 
 3.**Opthinal**
-  ```bash 
-   cd BTES
-   ```
-   ```bash 
-   git branch -m main
-   ```
+
+```bash
+ cd BTES
+```
+
+```bash
+git branch -m main
+```
 
 ## Usage & run in browser
+
 by terminal or powershell(ps) or git, change %USERPROFILE% with your username like
 
 1. **go to the project directory**:
+
    ```bash
    cd C:/Users/%USERPROFILE%/Desktop/BTES
    ```
 2. **Open your editor or Ide from current path**
    if VsCode `code .` or click riht in files then alot option then open BTES with vscode
-   then by your editor go to built in terminal with `ctrl+``
-   or `ctrl+ذ` or click terminal button in navbar option
+   then by your editor go to built in terminal with `ctrl+`` or `ctrl+ذ` or click terminal button in navbar option
+3. **Activate the virtual environment**
+   (optinal try discard it) sometimes your terminal editor Activate automatic
 
-4. **Activate the virtual environment**
-(optinal try discard it) sometimes your terminal editor Activate automatic
    - **On Windows powershell**:
      ```bash
      venv\Scripts\activate
@@ -54,21 +59,22 @@ by terminal or powershell(ps) or git, change %USERPROFILE% with your username li
      ```bash
      source venv/bin/activate
      ```
-     
-5. **Run the Django development server**:
+4. **Run the Django development server**:
    from btes directory
+
    ```bash
    py manage.py runserver
    ```
-3. **Open a web browser and go to**:
+5. **Open a web browser and go to**:
    This will open the application on your local web server.
-   
+
    pages links: ```http://127.0.0.1:8000```
 
    databases link/admin panel link: ```http://127.0.0.1:8000/admin/```
 
 **Notes:**
 for login in database create username if you don't have one get one by terminal write.
+
 ```bash
 py manage.py createsuperuser
 ```
