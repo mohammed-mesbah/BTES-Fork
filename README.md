@@ -41,9 +41,10 @@ by terminal or powershell(ps) or git, change %USERPROFILE% with your username li
    ```
 2. **Open your editor or Ide from current path**
    if VsCode `code .` or click riht in files then alot option then open BTES with vscode
-   then by your editor go to built in terminal with `ctrl+\` ` or `ctrl+ذ` or click terminal button in navbar option
+   then by your editor go to built in terminal with `ctrl+``
+   or `ctrl+ذ` or click terminal button in navbar option
 
-3. **Activate the virtual environment**
+4. **Activate the virtual environment**
 (optinal try discard it) sometimes your terminal editor Activate automatic
    - **On Windows powershell**:
      ```bash
@@ -54,7 +55,7 @@ by terminal or powershell(ps) or git, change %USERPROFILE% with your username li
      source venv/bin/activate
      ```
      
-4. **Run the Django development server**:
+5. **Run the Django development server**:
    from btes directory
    ```bash
    py manage.py runserver
@@ -62,14 +63,15 @@ by terminal or powershell(ps) or git, change %USERPROFILE% with your username li
 3. **Open a web browser and go to**:
    This will open the application on your local web server.
    
-   pages links:```http://127.0.0.1:8000```
+   pages links: ```http://127.0.0.1:8000```
 
-   databases link/admin panel link:```http://127.0.0.1:8000/admin/```
+   databases link/admin panel link: ```http://127.0.0.1:8000/admin/```
 
-**notes**
-   for login in database create username if you don't have one get one by terminal write.
-   
-   ```bash py manage.py createsuperuser```
+**Notes:**
+for login in database create username if you don't have one get one by terminal write.
+```bash
+py manage.py createsuperuser
+```
 
 ## Features
 
