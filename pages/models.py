@@ -14,7 +14,7 @@ class Event(models.Model):
     time = models.TimeField()
     location = models.CharField(max_length=255)
     price = models.DecimalField(max_digits=10, decimal_places=2)
-    available_tickets = models.IntegerField()
+    available_tickets= models.IntegerField()
     created_by = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -24,19 +24,48 @@ class Event(models.Model):
 class Ticket(models.Model):
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    quantity = models.PositiveIntegerField(default=1)
     purchase_date = models.DateTimeField(auto_now_add=True)
     is_refunded = models.BooleanField(default=False)
+    
+    
+    def purchase_ticket(self):
+        # التحقق من توفر العدد المطلوب من التذاكر في الحدث
+        if self.event.available_tickets >= self.quantity:
+            self.event.available_tickets -= self.quantity  # تقليل السعة المتاحة في الحدث
+            self.is_refunded = False
+            self.save()
+            self.event.save()
+        else:
+            raise ValueError("Not enough tickets available for this event.")
+    
+    def print_ticket(self):
+        # طباعة تفاصيل التذكرة
+        return f"Ticket for {self.event.title} - Quantity: {self.quantity} - Purchased by {self.user.username} on {self.purchase_date}"
 
     def __str__(self):
-        return f'Ticket for {self.event.title} by {self.user.username}'
+        return f"Ticket for {self.event.title} - Quantity: {self.quantity} - Purchased by {self.user.username} on {self.purchase_date}"
 
 # نموذج طلب الاسترداد
 class RefundRequest(models.Model):
     ticket = models.ForeignKey(Ticket, on_delete=models.CASCADE)
     request_date = models.DateTimeField(auto_now_add=True)
-    status = models.CharField(max_length=50, choices=[('Pending', 'Pending'), ('Completed', 'Completed')])
+    status = models.CharField(max_length=20, choices=[('active', 'Active'), ('cancelled', 'Cancelled')])
     credit_amount = models.DecimalField(max_digits=10, decimal_places=2)
+    
+    # def cancel_ticket(self):
+    #     # إلغاء التذكرة وزيادة السعة المتاحة في الحدث
+    #     if self.status == 'active':
+    #         self.status = 'cancelled'
+    #         self.event.capacity += self.quantity  # استعادة السعة المتاحة
+    #         self.save()
+    #         self.event.save()
+    #     else:
+    #         raise ValueError("Ticket is already cancelled.")
+            # self.is_refunded = False
 
+    def __str__(self):
+        return f"Ticket for {self.event.title} by {self.user.username} (Status: {self.status})"
     def __str__(self):
         return f'Refund request for {self.ticket}'
 

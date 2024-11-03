@@ -25,7 +25,7 @@ class EventForm(forms.ModelForm):
 class TicketForm(forms.ModelForm):
     class Meta:
         model = Ticket
-        fields = ['event', 'user']
+        fields = ['event','quantity', 'user']
 
 # نموذج طلب استرداد
 class RefundRequestForm(forms.ModelForm):
